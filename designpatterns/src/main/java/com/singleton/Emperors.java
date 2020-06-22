@@ -14,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Array;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -28,12 +29,14 @@ import java.util.Random;
  */
 public class Emperors {
 
+    // 皇帝数量
     private static int emperorsNum = 2;
 
     private static List<Emperors> emperorsList = new ArrayList<>();
 
     private static List<String> nameList = new ArrayList<>();
 
+    // 第几个皇帝
     private static int countNumOfEmperor = 0;
 
     private static Logger LOG = LogManager.getLogger();
@@ -52,8 +55,8 @@ public class Emperors {
     }
 
     public static Emperors getInstance() {
-        Random random = new Random();
-        countNumOfEmperor = random.nextInt(emperorsNum);
+        SecureRandom secureRandom = new SecureRandom();
+        countNumOfEmperor = secureRandom.nextInt(emperorsNum);
         return emperorsList.get(countNumOfEmperor);
     }
 

@@ -26,7 +26,7 @@ public class Minister
     private static Logger LOG = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
     public static void main(String[] args)
     {
-        Emperor.getInstance().say();
+        Emperors.getInstance().say();
         LOG.info("minister one see emperor jialilue one");
     }
 }
